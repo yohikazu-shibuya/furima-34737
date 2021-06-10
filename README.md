@@ -1,24 +1,59 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# usersテーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| password           | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| last_name_kana     | string | null: false |
+| first_name_kana    | string | null: false |
+| birthday           | string | null: false |
 
-Things you may want to cover:
+### Association
+- has_many :items
+- has_many :order
 
-* Ruby version
+# itemsテーブル
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| product                | text       | null: false                    |
+| product_description    | text       | null: false                    |
+| category               | text       | null: false                    |
+| product_details        | text       | null: false                    |
 
-* System dependencies
+| shipbase               | text       | null: false                    |
+| shipping_off_origin    | text       | null: false                    |
+| shipdate               | text       | null: false                    |
+| product_details        | text       | null: false                    |
+| price                  | text       | null: false                    |
 
-* Configuration
+### Association
+- belongs_to :user
+- has_many :order
 
-* Database creation
+# orderテーブル
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| user       | string | null: false |
+| item       | text   | null: false |
 
-* Database initialization
+### Association
+- has_many :items
+- belongs_to :user
+- has_one :addres
 
-* How to run the test suite
+# addresテーブル
+| Column        | Type       | Options                        |
+| --------------| ---------- | ------------------------------ |
+| postcode      | text       | null: false                    |
+| prefecture_id | text       | null: false                    |
+| city          | text       | null: false                    |
+| block         | text       | null: false                    |
+| building      | text       | null: false                    |
+| phone_number  | text       | null: false                    |
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user

@@ -5,14 +5,12 @@
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
 | email              | string | null: false, unique: true |
-| password           | string | null: false |
 | encrypted_password | string | null: false |
 | last_name          | string | null: false |
 | first_name         | string | null: false |
 | last_name_kana     | string | null: false |
 | first_name_kana    | string | null: false |
 | birthday           | date   | null: false |
-| item               | references | null: false,  foreign_key: true|
 
 ### Association
 - has_many :items
@@ -23,17 +21,17 @@
 | ---------------------- | ---------- | ------------------------------ |
 | product                | string      | null: false                    |
 | product_description    | text       | null: false                    |
-| category               | string      | null: false                    |
-| product_details        | string      | null: false                    |
-| shipbase               | string     | null: false                    |
-| shipping_off_origin    | string     | null: false                    |
-| shipdate               | string     | null: false                    |
+| category_id            | integer    | null: false                    |
+| product_details_id     | integer    | null: false                    |
+| shipbase_id            | integer    | null: false                    |
+| shipping_off_origin_id | integer    | null: false                    |
+| shipdate_id            | integer    | null: false                    |
 | product_details        | string     | null: false                    |
-| price                  | string     | null: false                    |
+| price                  | integer    | null: false                    |
 
 ### Association
-- has_one :user
-- has_many :order
+- belongs_to :user
+- has_one :order
 
 # ordersテーブル
 | Column     | Type       | Options                        |
@@ -53,7 +51,7 @@
 | prefecture_id | string     | null: false                    |
 | city          | string     | null: false                    |
 | block         | string     | null: false                    |
-| building      | string     | null: false                    |
+| building      | string     |                                |
 | phone_number  | string     | null: false                    |
 | item          | references | null: false, foreign_key: true |
 

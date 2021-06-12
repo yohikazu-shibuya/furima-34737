@@ -19,13 +19,13 @@
 # itemsテーブル
 | Column                 | Type       | Options                        |
 | ---------------------- | ---------- | ------------------------------ |
-| product                | string      | null: false                   |
+| product                | string     | null: false                    |
 | product_description    | text       | null: false                    |
 | category_id            | integer    | null: false                    |
-| product_details_id     | integer    | null: false                    |
-| shipbase_id            | integer    | null: false                    |
+| product_detail_id      | integer    | null: false                    |
+| ship_base_id           | integer    | null: false                    |
 | prefectures_id         | integer    | null: false                    |
-| shipdate_id            | integer    | null: false                    |
+| ship_date_id           | integer    | null: false                    |
 | price                  | integer    | null: false                    |
 
 ### Association
@@ -46,7 +46,7 @@
 # addressesテーブル
 | Column         | Type       | Options                        |
 | ---------------| ---------- | ------------------------------ |
-| postcode       | string     | null: false                    |
+| post_code      | string     | null: false                    |
 | prefectures_id | integer    | null: false                    |
 | city           | string     | null: false                    |
 | block          | string     | null: false                    |

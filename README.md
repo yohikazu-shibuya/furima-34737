@@ -19,14 +19,13 @@
 # itemsテーブル
 | Column                 | Type       | Options                        |
 | ---------------------- | ---------- | ------------------------------ |
-| product                | string      | null: false                    |
+| product                | string      | null: false                   |
 | product_description    | text       | null: false                    |
 | category_id            | integer    | null: false                    |
 | product_details_id     | integer    | null: false                    |
 | shipbase_id            | integer    | null: false                    |
-| shipping_off_origin_id | integer    | null: false                    |
+| prefectures_id         | integer    | null: false                    |
 | shipdate_id            | integer    | null: false                    |
-| product_details        | string     | null: false                    |
 | price                  | integer    | null: false                    |
 
 ### Association
@@ -40,20 +39,20 @@
 | item       | references | null: false, foreign_key: true |
 
 ### Association
-- has_many :item
+- belongs_to :item
 - belongs_to :user
-- has_one :addres
+- has_one :address
 
-# addressテーブル
-| Column        | Type       | Options                        |
-| --------------| ---------- | ------------------------------ |
-| postcode      | string     | null: false                    |
-| prefecture_id | string     | null: false                    |
-| city          | string     | null: false                    |
-| block         | string     | null: false                    |
-| building      | string     |                                |
-| phone_number  | string     | null: false                    |
-| item          | references | null: false, foreign_key: true |
+# addressesテーブル
+| Column         | Type       | Options                        |
+| ---------------| ---------- | ------------------------------ |
+| postcode       | string     | null: false                    |
+| prefectures_id | integer    | null: false                    |
+| city           | string     | null: false                    |
+| block          | string     | null: false                    |
+| building       | string     |                                |
+| phone_number   | string     | null: false                    |
+| order          | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :order

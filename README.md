@@ -24,7 +24,7 @@
 | category_id            | integer    | null: false                    |
 | product_detail_id      | integer    | null: false                    |
 | ship_base_id           | integer    | null: false                    |
-| prefectures_id         | integer    | null: false                    |
+| prefecture_id          | integer    | null: false                    |
 | ship_date_id           | integer    | null: false                    |
 | price                  | integer    | null: false                    |
 
@@ -47,7 +47,7 @@
 | Column         | Type       | Options                        |
 | ---------------| ---------- | ------------------------------ |
 | post_code      | string     | null: false                    |
-| prefectures_id | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 | city           | string     | null: false                    |
 | block          | string     | null: false                    |
 | building       | string     |                                |

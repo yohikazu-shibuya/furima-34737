@@ -1,0 +1,15 @@
+current directory: /Users/shibuyayoshikazu/projects/furima-34737/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+/Users/shibuyayoshikazu/.rbenv/versions/2.6.5/bin/ruby -I /Users/shibuyayoshikazu/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20210612-58410-1ocft3n.rb extconf.rb
+creating Makefile
+
+current directory: /Users/shibuyayoshikazu/projects/furima-34737/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/shibuyayoshikazu/projects/furima-34737/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/shibuyayoshikazu/projects/furima-34737/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210612-58410-2o51e4

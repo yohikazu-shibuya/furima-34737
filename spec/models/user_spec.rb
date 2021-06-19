@@ -78,6 +78,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
+      it 'passwordが5文字以下では登録できない' do
+        @user.password = '123ab'
+        @user.password_confirmation = '123ab'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
+      end
       it '苗字(漢字)が空では登録できない' do
         @user.last_name = ''
         @user.valid?
@@ -120,20 +126,6 @@ RSpec.describe User, type: :model do
         @user.first_name_kana = 'ﾅﾏｴ'
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana is invalid. Input full-width katakana characters")
-      end
-
-      it '重複したemailが存在する場合登録できない' do
-        @user.save
-        another_user = FactoryBot.build(:user)
-        another_user.email = @user.email
-        another_user.valid?
-        expect(another_user.errors.full_messages).to include('Email has already been taken')
-      end
-      it 'passwordが5文字以下では登録できない' do
-        @user.password = '123ab'
-        @user.password_confirmation = '123ab'
-        @user.valid?
-        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
     end
   end

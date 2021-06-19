@@ -4,10 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+    validates :password, format: { with:/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]{6,}+\z/i, message: 'is invalid. Include both letters and numbers' }
   with_options presence: true do
     validates :nickname
-    validates :email
-    validates :password, format: { with:/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]{6,}+\z/i, message: 'is invalid. Include both letters and numbers' }
     validates :birthday
     with_options format: { with:/\A[ぁ-んァ-ン一一-龥]+\z/, message: 'is invalid. Input full-width characters' } do
       validates :last_name

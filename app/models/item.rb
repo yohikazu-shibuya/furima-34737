@@ -9,8 +9,6 @@ class Item < ApplicationRecord
   belongs_to :ship_date
 
   has_one_attached :image
-
-  # validates :image, presence: true
   
   validates :product, presence: true
   validates :product_description, presence: true
@@ -22,5 +20,5 @@ class Item < ApplicationRecord
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :ship_date_id, numericality: { other_than: 1 }
 
-  validates :price, presence: true
+  validates :image, presence: true
 end

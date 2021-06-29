@@ -10,9 +10,17 @@ class Item < ApplicationRecord
 
   has_one_attached :image
 
+  # validates :image, presence: true
+  
+  validates :product, presence: true
+  validates :product_description, presence: true
+  validates :price, presence: true
+
   validates :category_id, numericality: { other_than: 1 }
   validates :product_detail_id, numericality: { other_than: 1 }
   validates :ship_base_id, numericality: { other_than: 1 }
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :ship_date_id, numericality: { other_than: 1 }
+
+  validates :price, presence: true
 end

@@ -1,4 +1,4 @@
-class Product_detail < ActiveHash::Base
+class ProductDetail < ActiveHash::Base
   # 商品の状態
   self.data = [
     { id: 1, name: '---' },

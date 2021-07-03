@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :item do
-    product               { 'ナマエ' }
-    product_description          { 'ナマエ'}
+    product                      { 'ナマエ' }
+    product_description          { 'ナマエ' }
     category_id              { 2 }
-    product_detail_id { 2 }
+    product_detail_id       { 2 }
     ship_base_id            { 2 }
     prefecture_id           { 2 }
     ship_date_id        { 2 }

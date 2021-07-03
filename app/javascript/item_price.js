@@ -1,9 +1,10 @@
-window.addEventListener('DOMContentLoaded', () => {
-   const priceInput = document.getElementById("item-price");
-   priceInput.addEventListener("input", () => {
+window.addEventListener("DOMContentLoaded", function() {
+      const priceInput = document.getElementById("item-price");
       const addTaxDom = document.getElementById("add-tax-price");
-      addTaxDom.innerHTML = Math.floor(priceInput.value / 10 ).toLocaleString();
       const salesCommission = document.getElementById("profit");
+      
+      priceInput.addEventListener("input", () => {
+      addTaxDom.innerHTML = Math.floor(priceInput.value / 10 ).toLocaleString();
       salesCommission.innerHTML = (priceInput.value - Math.floor(priceInput.value /10)).toLocaleString();
 
    })

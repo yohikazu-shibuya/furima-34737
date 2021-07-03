@@ -10,7 +10,5 @@ FactoryBot.define do
     first_name_kana       { 'ナマエ' }
     birthday              { '2000-01-01' }
 
-    # association :item
-
   end
 end

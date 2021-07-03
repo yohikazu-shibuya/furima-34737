@@ -10,17 +10,18 @@ class Item < ApplicationRecord
 
   has_one_attached :image
   
-  validates :product, presence: true, length: { maximum: 40}
-  validates :product_description, presence: true, length: { maximum: 1000}
-  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300,
-  less_than_or_equal_to: 9999999 }
+  with_options presence: true do
+    validates :product, length: { maximum: 40}
+    validates :product_description, length: { maximum: 1000}
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    validates :image
+  end
 
-
-  validates :category_id, numericality: { other_than: 1 }
-  validates :product_detail_id, numericality: { other_than: 1 }
-  validates :ship_base_id, numericality: { other_than: 1 }
-  validates :prefecture_id, numericality: { other_than: 1 }
-  validates :ship_date_id, numericality: { other_than: 1 }
-
-  validates :image, presence: true
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :product_detail_id
+    validates :ship_base_id
+    validates :prefecture_id
+    validates :ship_date_id
+  end
 end

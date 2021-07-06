@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @items = Item.find(1)
+    # @items = Item.find(1)
     # @items = Item.order("created_at DESC")
   end
 

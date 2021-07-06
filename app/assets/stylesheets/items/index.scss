@@ -253,6 +253,16 @@ a {
 
 .item-img-content {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.img-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
 .item-img {
@@ -309,4 +319,3 @@ a {
 }
 
 /* //商品一覧 */
-

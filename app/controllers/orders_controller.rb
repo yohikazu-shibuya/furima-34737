@@ -1,9 +1,16 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, except: :index
-  
+
   def index
     @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new
+    if current_user == @item.user
+      redirect_to root_path
+    elsif unless current_user
+      redirect_to new_user_session_path
+    end
+
+    end
   end
 
   def new
@@ -28,6 +35,15 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       render action: :index
+    end
+  end
+
+  def move_to_index
+    if unless @item.user
+      redirect_to root_path
+    else
+       redirect_to root_path
+    end
     end
   end
 

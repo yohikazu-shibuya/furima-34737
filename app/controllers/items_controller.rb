@@ -13,17 +13,21 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render :new
-   end
+      if @item.save
+        redirect_to root_path
+      else
+        render :ßnew
+      end
   end
 
   def show
   end
 
   def edit
+    if @item.order.present?
+      redirect_to root_path
+    else
+    end    
   end
 
   def update

@@ -1,9 +1,6 @@
 class OrderAddress
-  attr_accessor :token
   include ActiveModel::Model
-  attr_accessor :post_code, :prefecture_id, :city, :block, :building, :phone_number, :user_id, :item_id
-
-
+  attr_accessor :post_code, :prefecture_id, :city, :block, :building, :phone_number, :user_id, :item_id,:token
 
   with_options presence: true do
     validates :token
@@ -14,6 +11,8 @@ class OrderAddress
     validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
     validates :block
     validates :phone_number, format: {with: /\A\d{10}\z|\A\d{11}\z/ , message: "is invalid."}
+    validates :user_id
+    validates :item_id
   end
 
   def save

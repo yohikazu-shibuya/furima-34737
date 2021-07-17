@@ -6,8 +6,6 @@ FactoryBot.define do
     city { '札幌市' }
     block { '1-1' }
     building { '東京ハイツ' }
-    phone_number { '09012345678' }
-    user_id { 1 }
-    item_id { 1 }
+    phone_number { 19012345678 }
   end
 end
